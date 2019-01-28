@@ -9,3 +9,5 @@ avgG.avgGrade(80);
 tmps.getKelvin(300);
 speedC.sCar(110,2);
 Acircle.areaC(4);
+
+console.log("hello")
