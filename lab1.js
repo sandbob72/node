@@ -1,6 +1,6 @@
 let stdin = process.openStdin()
 stdin.addListener("data", (d) => {
- var s2 = d.toString().trim()
+ var s2 = d.toString().trim().toLowerCase()
     var s1 = ""
 
     for (var i = s2.length - 1; i >= 0; i--) {
