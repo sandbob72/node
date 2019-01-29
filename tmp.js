@@ -1,6 +1,8 @@
 module.exports.getKelvin = (k) =>{
     var c = 0.00
     var f = 0.00
+    var r = 0.00
+    var k = 0.00
 
     c = k-273.15
     console.log("Kelvin"+" "+k+" "+"to degree Celsius"+" is "+c)
