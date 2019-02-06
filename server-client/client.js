@@ -7,21 +7,31 @@ var i = 1, name, id
 client.connect(PORT, HOST, function () {
     console.log('CONNECTED TO: ' + HOST + ':' + PORT);
     client.write('5935512039');
-    
+
 });
 client.on('data', function (data) {
     console.log('DATA: ' + data);
-    // stdin.addListener("data", (volum) => {
-        if (data === 'BINGO'||data === 'END') {
-            client.destroy();
-        }
-        else{   
-            client.write(""+i);
-        }
-        i++
+    if (data == 'OK') {
+        stdin.addListener("data", (volum) => {
+            client.write(volum);
+        });
+    }
 
-    // });
-    
+    else if(data == 'WRONG'){
+        // stdin.addListener("data", (volum) => {
+        //     client.write(volum);
+        // });
+        console.log('WRONG');
+        
+    }
+
+    else if (data == 'BINGO' || data == 'END') {
+        stdin.destroy();
+        client.destroy();
+    }
+
+
+
 });
 // Add a 'close' event handler for the client socket
 client.on('close', function () {
