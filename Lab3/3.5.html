@@ -9,10 +9,22 @@
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="main.js"></script>
     <script> alert('Hello'); </script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(function ()  {
+            $("#b").click( function () {
+                $("#id1").toggle('hide', function() {
+                    var test = $(this).css('display');
+        
+             })
+         });
+     });
+     </script>
+
 </head>
 
 <body>
@@ -26,31 +38,32 @@
             <figure class="figure">
                 <img src="sakul2.jpg" class="figure-img img-fluid rounded" alt="Sakul" width="50%">
                 <figcaption class="figure-caption">A caption for the above image.</figcaption>
-              </figure>
+            </figure>
         </article>
         <table class="table table-sm table-dark" style="width:100%">
-                <tr class="table-active">
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Age</th>
-                </tr>
-                <tr>
-                    <td>Sakul</td>
-                    <td>Somkerwwhan</td>
-                    <td>22</td>
-                </tr>
-            </table>
-        <nav>
+            <tr class="table-active">
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Sakul</td>
+                <td>Somkerwwhan</td>
+                <td>22</td>
+            </tr>
+        </table>
+        <nav id="id1">
             <p>Contact</p>
             <ul class="list-group">
-                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100004202202054">Facbook: Sakul SandBob</a></li>
+                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100004202202054">Facbook:
+                        Sakul SandBob</a></li>
                 <li class="list-group-item">Email: sakul.s2557@gmail.com</li>
                 <li class="list-group-item">Mobile: 0805333758</li>
             </ul>
         </nav>
     </section>
-   
-
+    <button id="b"> Toggle </button>
+    
 
 
 </body>

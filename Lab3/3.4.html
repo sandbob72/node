@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="main.js"></script>
-    
+
 </head>
 
 <body>
@@ -24,30 +25,67 @@
             <figure class="figure">
                 <img src="sakul2.jpg" class="figure-img img-fluid rounded" alt="Sakul" width="50%">
                 <figcaption class="figure-caption">A caption for the above image.</figcaption>
-              </figure>
+            </figure>
         </article>
         <table class="table table-sm table-dark" style="width:100%">
-                <tr class="table-active">
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Age</th>
-                </tr>
-                <tr>
-                    <td>Sakul</td>
-                    <td>Somkerwwhan</td>
-                    <td>22</td>
-                </tr>
-            </table>
+            <tr class="table-active">
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Sakul</td>
+                <td>Somkerwwhan</td>
+                <td>22</td>
+            </tr>
+        </table>
         <nav>
             <p>Contact</p>
             <ul class="list-group">
-                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100004202202054">Facbook: Sakul SandBob</a></li>
+                <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100004202202054">Facbook:
+                        Sakul SandBob</a></li>
                 <li class="list-group-item">Email: sakul.s2557@gmail.com</li>
                 <li class="list-group-item">Mobile: 0805333758</li>
             </ul>
         </nav>
     </section>
+    <script>
+        var day;
+        var greeting;
+        var time = new Date().getHours();
 
+        if (time < 10) {
+            greeting = "Good morning";
+        } else if (time < 20) {
+            greeting = "Good day";
+        } else {
+            greeting = "Good evening";
+        }
+
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+        }
+        document.getElementById("demo").innerHTML = alert("Hello " + day + " Now the time is "+greeting);
+    </script>
 
 
 </body>
