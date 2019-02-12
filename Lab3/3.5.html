@@ -15,15 +15,34 @@
     <script> alert('Hello'); </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>
-        $(function ()  {
-            $("#b").click( function () {
-                $("#id1").toggle('hide', function() {
-                    var test = $(this).css('display');
-        
-             })
-         });
-     });
-     </script>
+        //     $(function ()  {
+        //         $("#b").click( function () {
+        //             $("#id1").toggle('hide', function() {
+        //                 var test = $(this).css('display');
+
+        //          })
+        //      });
+        //  });
+        $(document).ready(()=> {
+            $("#flip").click( ()=> {
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+    <style>
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #1a0000;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
 
 </head>
 
@@ -52,8 +71,9 @@
                 <td>22</td>
             </tr>
         </table>
-        <nav id="id1">
-            <p>Contact</p>
+        <div id="flip" style="color:white;">Contact</div>
+        <nav id="panel">
+            <p style="color:white;">Contact</p>
             <ul class="list-group">
                 <li class="list-group-item"><a href="https://www.facebook.com/profile.php?id=100004202202054">Facbook:
                         Sakul SandBob</a></li>
@@ -62,8 +82,7 @@
             </ul>
         </nav>
     </section>
-    <button id="b"> Toggle </button>
-    
+
 
 
 </body>
