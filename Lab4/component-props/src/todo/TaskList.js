@@ -8,8 +8,8 @@ class TaskList extends Component {
                 <Table border="1" width='50%' align="center">
               <thead>
                 <tr>
-                  <th>ชื่อ</th>
-                  <th>รหัส</th>
+                  <th>ชื่อ-นามสกุล</th>
+                  <th>รหัสนักศึกษา</th>
                 </tr>
               </thead>
               <tbody>
