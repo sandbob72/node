@@ -6,25 +6,33 @@ import InputTask from "./todo/InputTask";
 class App extends Component {
 
    state = {
-       tasks: [{id: 1, task: 'Do homework'},
-               {id: 2, task: 'Read book'}],
-       id:3
+    //    tasks: [{id: 1, task: 'Do homework'},
+    //            {id: 2, task: 'Read book'}],
+       code:[{Name : 'Sakul Somkerwwhan',codeNumber : '5935512039'}]        
+    //    id:3
    }
 
-   addTask = (task) => {
+//    addTask = (task) => {
+//        this.setState({
+//                 tasks: [...this.state.tasks, {id: this.state.id,task } ],
+//                 id: this.state.id+1  })
+//    }
+   addCode = (Name, codeNumber) => {
        this.setState({
-                tasks: [...this.state.tasks, {id: this.state.id,task } ],
-                id: this.state.id+1  })
+                code: [...this.state.code, {Name,codeNumber}]
+       })
    }
 
    render() {   
-    console.log('id',this.state.id);
+    console.log('code',this.state.code);
 
        return (
            <div className="App">
                <h1>Todo</h1>
-               <TaskList tasks={this.state.tasks}/>
-               <InputTask addTask={this.addTask} id={this.state.id}/>
+               <TaskList tasks={this.state.tasks}
+                         code={this.state.code}/>
+               <InputTask addCode={this.addCode}  />
+               {/* <InputTask addTask={this.addTask} addCode={this.addCode} id={this.state.id} /> */}
                <br/>
            </div>
        );
