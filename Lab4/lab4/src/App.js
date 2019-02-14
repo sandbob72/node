@@ -5,17 +5,15 @@ class App extends Component {
   state = {count:0}
   constructor(props){
     super(props)
-    this.add = this.add.bind(this)
-    this.delete = this.delete.bind(this)
+    //this.add = this.add.bind(this)
+    //this.delete = this.delete.bind(this)
   }
 
-  add = function(){
-    this.setState({count:this.state.count+1})
-  }
+  add = () => this.setState({count:this.state.count+1})
+  
 
-  delete = function(){
-    this.setState({count:this.state.count-1})
-  }
+  delete = () => this.setState({count:this.state.count-1})
+  
 
   render() {
     return (
