@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Table } from 'reactstrap'
+import Github from './Github'
 
 class TaskList extends Component {
     render() {
@@ -10,6 +11,7 @@ class TaskList extends Component {
                 <tr>
                   <th>ชื่อ-นามสกุล</th>
                   <th>รหัสนักศึกษา</th>
+                  <th>Github</th>
                 </tr>
               </thead>
               <tbody>
@@ -19,6 +21,7 @@ class TaskList extends Component {
                       <tr key={index}>
                         <td>{item.Name}</td>
                         <td>{item.codeNumber}</td>
+                        <td><Github/></td>
                       </tr>
                     )
                   })

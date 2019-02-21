@@ -2,7 +2,7 @@ import React, {Component}  from 'react';
 
 class InputTask extends Component {
 
-   state = {Name:'', codeNumber:''}
+   state = {Name:'', codeNumber:'', User:''}
 
    handleChange = (e) => {
        this.setState({ [e.target.name] : e.target.value });
@@ -16,7 +16,9 @@ class InputTask extends Component {
                <input type="text" name="Name" onChange={this.handleChange} /> <br/>
                <p>Student code</p>
                <input type="text" name="codeNumber" onChange={this.handleChange} /> <br/>
-               <button onClick={() => this.props.addCode(this.state.Name, this.state.codeNumber)}>Add</button>
+               <p>Github User</p>
+               <input type="text" name="User" onChange={this.handleChange} /> <br/>
+               <button onClick={() => this.props.addCode(this.state.Name, this.state.codeNumber, this.state.User)}>Add</button>
            </div>
        )
    }
