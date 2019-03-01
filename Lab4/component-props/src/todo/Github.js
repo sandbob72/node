@@ -3,22 +3,22 @@ import axios from 'axios';
 
 class Github extends Component {
 
-    state = { user:'sandbob72' , data:''}
+    // state = { user:'sandbob72' , data:''}
  
-    componentDidMount = () => this.fetchUser(this.state.user)
+    // componentDidMount = () => this.fetchUser(this.state.user)
  
-    fetchUser = (USER) => {
-        axios.get(`https://api.github.com/users/${USER}`)
-            .then(response => {
-                this.setState({data: response.data})
-                console.log(response.data)
-            })
-    }
+    // fetchUser = (USER) => {
+    //     axios.get(`https://api.github.com/users/${USER}`)
+    //         .then(response => {
+    //             this.setState({data: response.data})
+    //             console.log(response.data)
+    //         })
+    // }
  
     render() {
-        const {data} = this.state
-        if (data)
-            return ( <div>{data.id}: {data.name} <img src={data.avatar_url} alt="avatar" width="50px"/> </div> )
+        // const {data} = this.state
+        if (this.props.data)
+            return ( <div>{this.props.data.id}: {this.props.data.name} <img src={this.props.data.avatar_url} alt="avatar" width="50px"/> </div> )
         return (<div>.</div>);
     }
  }

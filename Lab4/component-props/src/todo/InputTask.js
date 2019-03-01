@@ -18,7 +18,8 @@ class InputTask extends Component {
                <input type="text" name="codeNumber" onChange={this.handleChange} /> <br/>
                <p>Github User</p>
                <input type="text" name="User" onChange={this.handleChange} /> <br/>
-               <button onClick={() => this.props.addCode(this.state.Name, this.state.codeNumber, this.state.User)}>Add</button>
+               <button onClick={() => this.props.addCode(this.state.Name, this.state.codeNumber)}>Add</button>
+               <button onClick = { () => this.props.addUser(this.state.User)} > Adduser</button>
            </div>
        )
    }
