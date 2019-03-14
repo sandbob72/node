@@ -3,11 +3,11 @@ import './App.css';
 
 class App extends Component {
   state = {count:0}
-  constructor(props){
-    super(props)
-    //this.add = this.add.bind(this)
-    //this.delete = this.delete.bind(this)
-  }
+  // constructor(props){
+  //   super(props)
+  //   //this.add = this.add.bind(this)
+  //   //this.delete = this.delete.bind(this)
+  // }
 
   add = () => this.setState({count:this.state.count+1})
   
