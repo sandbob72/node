@@ -9,8 +9,8 @@ class Count extends Component {
        return (
                <div style={{margin: '20px'}}>
                    Counter: {this.props.number} <br/>
-                   <button onClick={() => store.dispatch(add())}>+</button>
-                   <button onClick={() => store.dispatch(minus())}>-</button>
+                   <button onClick={this.props.add}>+</button>
+                   <button onClick={this.props.minus}>-</button>
                </div>
        );
    }
@@ -19,4 +19,11 @@ class Count extends Component {
 const mapStateToProps = (state) => {
    return { number: state.number }
 }
-export default connect(mapStateToProps)(Count);
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        add: () => store.dispatch(add()),
+        minus: () => store.dispatch(minus())
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Count);
