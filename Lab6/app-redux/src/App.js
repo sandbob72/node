@@ -1,15 +1,19 @@
 import React, {Component} from 'react'; 
 import Count from './Count' 
 import {Provider} from 'react-redux'
-import {createStore, combineReducers} from 'redux'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import logger from 'redux-logger'
 
 export const add = () => ({type: 'ADD'})
+export const add2 = (number) => ({type: 'ADD2', number})
 export const minus = () => ({ type: 'MINUS'})
 
 export const numberReducer = (state = 0, action) => {
   switch (action.type) {
       case 'ADD':
           return state + 1
+      case 'ADD2':
+          return state + action.number
       case 'MINUS':
           return state - 1
       default:
@@ -17,7 +21,7 @@ export const numberReducer = (state = 0, action) => {
   }
 }
 export const rootReducer = combineReducers({number: numberReducer})
-export const store = createStore(rootReducer)
+export const store = createStore(rootReducer, applyMiddleware(logger))
 
 
 class App extends Component { 
