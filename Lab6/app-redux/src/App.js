@@ -3,22 +3,21 @@ import Count from './Count'
 import {Provider} from 'react-redux'
 import {createStore, combineReducers} from 'redux'
 
-export const add = () => {
-  return {type: 'ADD'}
-}
+export const add = () => ({type: 'ADD'})
+export const minus = () => ({ type: 'MINUS'})
 
-const numberReducer = (state=0,action)=>{
-  switch(action.type){
-    case 'ADD' : return state+1
-    default : return state
+export const numberReducer = (state = 0, action) => {
+  switch (action.type) {
+      case 'ADD':
+          return state + 1
+      case 'MINUS':
+          return state - 1
+      default:
+          return state
   }
 }
-
-//const rootReducer = combineReducers({number: numberReducer})
-export const store = createStore(numberReducer)
-
-store.dispatch( add() )
-console.log(store.getState());
+export const rootReducer = combineReducers({number: numberReducer})
+export const store = createStore(rootReducer)
 
 
 class App extends Component { 

@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
-
+import './App.css';
+import { add,minus, store} from './App'
+import { connect } from 'react-redux'
 
 class Count extends Component {
-    state = {number: 0}
-    add = () => this.setState({number: this.state.number + 1})
-    minus = () => this.setState({number: this.state.number - 1})
- 
-    render() {
-        return (
-                <div style={{margin: '20px'}}>
-                    Counter: {this.state.number} <br/>
-                    <button onClick={this.add} > +</button>
-                    <button onClick={this.minus}> -</button>
-                </div>
-        );
-    }
- }
- 
- export default Count
+
+   render() {
+       return (
+               <div style={{margin: '20px'}}>
+                   Counter: {this.props.number} <br/>
+                   <button onClick={() => store.dispatch(add())}>+</button>
+                   <button onClick={() => store.dispatch(minus())}>-</button>
+               </div>
+       );
+   }
+}
+
+const mapStateToProps = (state) => {
+   return { number: state.number }
+}
+export default connect(mapStateToProps)(Count);
