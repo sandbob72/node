@@ -28,7 +28,7 @@ class App extends Component {
         axios.get(`https://api.github.com/users/${USER}`)
             .then(res => {
                 this.setState({ data: res.data })
-                console.log(res.data)
+                console.log('data',res.data)
             })
     }
 
@@ -56,7 +56,7 @@ class App extends Component {
                 {/* <InputTask addTask={this.addTask} addCode={this.addCode} id={this.state.id} /> */}
                 <br />
                 <Github data={this.state.data} />
-                <Weather/>
+                {/* <Weather/> */}
             </div>
         );
     }
