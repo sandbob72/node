@@ -17,9 +17,9 @@ export const getBearsFailed = () => ({ type: 'GET_BEARS_FAILED'});
 export const getBears = () => async (dispatch) => {
    try {
        console.log('get bear new')
-       const response = await axios.get(`http://localhost:8000/api/students`)
+       const response = await axios.get(`https://api.github.com/users/sandbob72`)
     //    const responseBody = await response.data;
-    //    console.log('response: ', responseBody)
+       console.log('response: ', response.data)
        dispatch(getBearsSuccess(response.data));
    } catch (error) {
        console.error(error);

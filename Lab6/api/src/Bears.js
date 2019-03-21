@@ -1,26 +1,29 @@
 import React, {Component} from 'react';
-import {getBears} from './App'
+import {getBear} from './App4'
 import { connect } from 'react-redux'
 
-class Bear extends Component {
+class Bears extends Component {
 
    componentDidMount() {
-       console.log('props',this.props)
        this.props.getBears()
    }
 
    renderBears = () => {
        if (this.props.bears) {
-           return ( <div>{this.props.bears.id}: {this.props.bears.name} <img src={this.props.bears.avatar_url} alt="avatar" width="50px"/> </div> )
+           return this.props.bears.map( (bear, index) => {
+               console.log( bear.name)
+               return (<li key={index}> {bear.name} </li>
+           )})
        }
    }
 
    render() {
        return (
            <div style={{margin: '20px'}}>
-               <h3>Render Student</h3>
+               <h3>Render Bear</h3>
                <ul>
                    {this.renderBears()}
+                
                </ul>
            </div>
        );
@@ -32,9 +35,9 @@ const mapStateToProps =  ({bears}) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-   return {
-       getBears: () => dispatch(getBears())
-   }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Bear);
+    return {
+        getBears: () => dispatch(getBear())
+    }
+ }
+ 
+ export default connect(mapStateToProps,mapDispatchToProps)(Bears);
